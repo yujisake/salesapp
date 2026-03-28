@@ -13,6 +13,7 @@ export interface Deal {
   id: string;
   dealNumber: string;
   companyName: string;
+  contactName: string;
   stage: DealStage;
   nextAction: string;
   assignee: string;

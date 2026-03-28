@@ -43,6 +43,7 @@ export default function DealTable() {
       list = list.filter(
         (d) =>
           d.companyName.toLowerCase().includes(q) ||
+          d.contactName.toLowerCase().includes(q) ||
           d.nextAction.toLowerCase().includes(q) ||
           d.assignee.toLowerCase().includes(q) ||
           d.dealNumber.includes(q)
@@ -145,6 +146,7 @@ export default function DealTable() {
               <Th onClick={() => toggleSort("companyName")}>
                 会社名 {sortIcon("companyName")}
               </Th>
+              <Th>相手担当者</Th>
               <Th onClick={() => toggleSort("stage")}>
                 ステージ {sortIcon("stage")}
               </Th>
@@ -155,7 +157,7 @@ export default function DealTable() {
               <Th onClick={() => toggleSort("scheduledDate")}>
                 実行予定日 {sortIcon("scheduledDate")}
               </Th>
-              <Th>結果</Th>
+              <Th>進捗・結果</Th>
               <Th>仮説</Th>
               <Th>受注金額</Th>
               <Th align="right">操作</Th>
@@ -165,7 +167,7 @@ export default function DealTable() {
             {filtered.length === 0 ? (
               <tr>
                 <td
-                  colSpan={10}
+                  colSpan={11}
                   className="px-4 py-12 text-center text-sm text-gray-400"
                 >
                   該当する案件がありません
@@ -185,6 +187,9 @@ export default function DealTable() {
                     <div className="text-sm font-medium text-gray-900">
                       {deal.companyName}
                     </div>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">
+                    {deal.contactName}
                   </td>
                   <td className="px-4 py-3">
                     <StageBadge stage={deal.stage} />

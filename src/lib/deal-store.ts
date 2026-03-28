@@ -22,7 +22,7 @@ export function dealReducer(state: Deal[], action: DealAction): Deal[] {
 }
 
 export function getNextDealNumber(deals: Deal[]): string {
-  if (deals.length === 0) return "00";
+  if (deals.length === 0) return "01";
   const maxNum = Math.max(
     ...deals.map((d) => parseInt(d.dealNumber, 10))
   );

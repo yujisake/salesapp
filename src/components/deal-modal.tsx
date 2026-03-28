@@ -15,6 +15,7 @@ export default function DealModal({ deal, onClose, onSave }: Props) {
   const isEdit = !!deal;
   const [form, setForm] = useState({
     companyName: deal?.companyName ?? "",
+    contactName: deal?.contactName ?? "",
     stage: deal?.stage ?? ("未アプローチ" as DealStage),
     nextAction: deal?.nextAction ?? "",
     assignee: deal?.assignee ?? "村上",
@@ -54,14 +55,23 @@ export default function DealModal({ deal, onClose, onSave }: Props) {
         </h2>
 
         <form onSubmit={handleSubmit} className="mt-5 space-y-4">
-          <Field label="会社名" required>
-            <input
-              type="text"
-              required
-              value={form.companyName}
-              onChange={(e) => set("companyName", e.target.value)}
-            />
-          </Field>
+          <div className="grid grid-cols-2 gap-4">
+            <Field label="会社名" required>
+              <input
+                type="text"
+                required
+                value={form.companyName}
+                onChange={(e) => set("companyName", e.target.value)}
+              />
+            </Field>
+            <Field label="相手担当者">
+              <input
+                type="text"
+                value={form.contactName}
+                onChange={(e) => set("contactName", e.target.value)}
+              />
+            </Field>
+          </div>
 
           <div className="grid grid-cols-2 gap-4">
             <Field label="ステージ">
@@ -106,7 +116,7 @@ export default function DealModal({ deal, onClose, onSave }: Props) {
             />
           </Field>
 
-          <Field label="結果">
+          <Field label="進捗・結果">
             <textarea
               rows={2}
               value={form.result}
