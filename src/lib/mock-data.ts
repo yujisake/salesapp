@@ -51,7 +51,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "4",
-    dealNumber: "04",
+    dealNumber: "01",
     category: "海外",
     companyName: "Shanghai Tech Co., Ltd.",
     contactName: "王 明",
@@ -67,7 +67,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "5",
-    dealNumber: "05",
+    dealNumber: "02",
     category: "海外",
     companyName: "Singapore Solutions Pte. Ltd.",
     contactName: "Tan Wei Ming",
@@ -83,7 +83,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "6",
-    dealNumber: "06",
+    dealNumber: "04",
     category: "新規開拓",
     companyName: "横浜コンサルティング株式会社",
     contactName: "中村 六郎",
@@ -99,7 +99,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "7",
-    dealNumber: "07",
+    dealNumber: "01",
     category: "OEM",
     companyName: "神戸エレクトロニクス株式会社",
     contactName: "小林 七郎",
@@ -115,7 +115,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "8",
-    dealNumber: "08",
+    dealNumber: "02",
     category: "OEM",
     companyName: "仙台ヘルスケア株式会社",
     contactName: "加藤 八郎",
@@ -131,7 +131,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "9",
-    dealNumber: "09",
+    dealNumber: "03",
     category: "海外",
     companyName: "Bangkok Trading Co., Ltd.",
     contactName: "Somchai P.",
@@ -147,7 +147,7 @@ export const initialDeals: Deal[] = [
   },
   {
     id: "10",
-    dealNumber: "10",
+    dealNumber: "03",
     category: "OEM",
     companyName: "京都クリエイティブ株式会社",
     contactName: "井上 十郎",

@@ -21,10 +21,11 @@ export function dealReducer(state: Deal[], action: DealAction): Deal[] {
   }
 }
 
-export function getNextDealNumber(deals: Deal[]): string {
-  if (deals.length === 0) return "01";
+export function getNextDealNumber(deals: Deal[], category: string): string {
+  const catDeals = deals.filter((d) => d.category === category);
+  if (catDeals.length === 0) return "01";
   const maxNum = Math.max(
-    ...deals.map((d) => parseInt(d.dealNumber, 10))
+    ...catDeals.map((d) => parseInt(d.dealNumber, 10))
   );
   return String(maxNum + 1).padStart(2, "0");
 }
@@ -37,7 +38,7 @@ export function createNewDeal(
   return {
     ...partial,
     id: crypto.randomUUID(),
-    dealNumber: getNextDealNumber(deals),
+    dealNumber: getNextDealNumber(deals, partial.category),
     createdAt: today,
     updatedAt: today,
   };
