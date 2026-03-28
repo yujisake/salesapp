@@ -12,6 +12,7 @@ export type DealStage =
 export interface Deal {
   id: string;
   dealNumber: string;
+  category: string;
   companyName: string;
   contactName: string;
   stage: DealStage;
@@ -60,3 +61,5 @@ export const ASSIGNEES = [
 ] as const;
 
 export type Assignee = (typeof ASSIGNEES)[number];
+
+export const DEFAULT_CATEGORIES = ["新規顧客", "海外", "OEM"] as const;

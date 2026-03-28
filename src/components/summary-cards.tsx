@@ -3,18 +3,19 @@
 import { useDeals } from "@/lib/deal-store";
 import { formatCurrency } from "@/lib/utils";
 
-export default function SummaryCards() {
+export default function SummaryCards({ category }: { category: string }) {
   const { deals } = useDeals();
+  const catDeals = deals.filter((d) => d.category === category);
 
-  const active = deals.filter(
+  const active = catDeals.filter(
     (d) => d.stage !== "受注" && d.stage !== "納品" && d.stage !== "失注"
   );
-  const won = deals.filter((d) => d.stage === "受注" || d.stage === "納品");
+  const won = catDeals.filter((d) => d.stage === "受注" || d.stage === "納品");
   const wonAmount = won.reduce((sum, d) => sum + d.wonAmount, 0);
-  const lost = deals.filter((d) => d.stage === "失注");
+  const lost = catDeals.filter((d) => d.stage === "失注");
 
   const cards = [
-    { label: "全案件数", value: `${deals.length}件` },
+    { label: "全案件数", value: `${catDeals.length}件` },
     { label: "進行中", value: `${active.length}件` },
     { label: "受注・納品", value: `${won.length}件` },
     { label: "受注総額", value: formatCurrency(wonAmount) },

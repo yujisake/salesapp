@@ -4,6 +4,7 @@ export const initialDeals: Deal[] = [
   {
     id: "1",
     dealNumber: "01",
+    category: "新規顧客",
     companyName: "東京テクノロジー株式会社",
     contactName: "田中 太郎",
     stage: "商談中",
@@ -19,6 +20,7 @@ export const initialDeals: Deal[] = [
   {
     id: "2",
     dealNumber: "02",
+    category: "新規顧客",
     companyName: "大阪メディア株式会社",
     contactName: "佐藤 次郎",
     stage: "提案",
@@ -34,6 +36,7 @@ export const initialDeals: Deal[] = [
   {
     id: "3",
     dealNumber: "03",
+    category: "新規顧客",
     companyName: "名古屋製造株式会社",
     contactName: "高橋 三郎",
     stage: "ヒアリング",
@@ -49,8 +52,9 @@ export const initialDeals: Deal[] = [
   {
     id: "4",
     dealNumber: "04",
-    companyName: "福岡フィンテック株式会社",
-    contactName: "伊藤 四郎",
+    category: "海外",
+    companyName: "Shanghai Tech Co., Ltd.",
+    contactName: "王 明",
     stage: "見積",
     nextAction: "見積書の条件交渉",
     assignee: "吉田",
@@ -64,8 +68,9 @@ export const initialDeals: Deal[] = [
   {
     id: "5",
     dealNumber: "05",
-    companyName: "札幌ロジスティクス株式会社",
-    contactName: "渡辺 五郎",
+    category: "海外",
+    companyName: "Singapore Solutions Pte. Ltd.",
+    contactName: "Tan Wei Ming",
     stage: "受注",
     nextAction: "契約書の最終確認",
     assignee: "小澤",
@@ -79,6 +84,7 @@ export const initialDeals: Deal[] = [
   {
     id: "6",
     dealNumber: "06",
+    category: "新規顧客",
     companyName: "横浜コンサルティング株式会社",
     contactName: "中村 六郎",
     stage: "未アプローチ",
@@ -94,6 +100,7 @@ export const initialDeals: Deal[] = [
   {
     id: "7",
     dealNumber: "07",
+    category: "OEM",
     companyName: "神戸エレクトロニクス株式会社",
     contactName: "小林 七郎",
     stage: "失注",
@@ -109,6 +116,7 @@ export const initialDeals: Deal[] = [
   {
     id: "8",
     dealNumber: "08",
+    category: "OEM",
     companyName: "仙台ヘルスケア株式会社",
     contactName: "加藤 八郎",
     stage: "アポイントメント",
@@ -124,8 +132,9 @@ export const initialDeals: Deal[] = [
   {
     id: "9",
     dealNumber: "09",
-    companyName: "広島トラベル株式会社",
-    contactName: "松本 九郎",
+    category: "海外",
+    companyName: "Bangkok Trading Co., Ltd.",
+    contactName: "Somchai P.",
     stage: "提案",
     nextAction: "プレゼン結果の確認連絡",
     assignee: "土田",
@@ -139,6 +148,7 @@ export const initialDeals: Deal[] = [
   {
     id: "10",
     dealNumber: "10",
+    category: "OEM",
     companyName: "京都クリエイティブ株式会社",
     contactName: "井上 十郎",
     stage: "納品",

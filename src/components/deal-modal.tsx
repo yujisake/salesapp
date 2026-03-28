@@ -6,14 +6,16 @@ import { createNewDeal, updateDealFields, useDeals } from "@/lib/deal-store";
 
 interface Props {
   deal?: Deal;
+  category?: string;
   onClose: () => void;
   onSave: (deal: Deal) => void;
 }
 
-export default function DealModal({ deal, onClose, onSave }: Props) {
+export default function DealModal({ deal, category, onClose, onSave }: Props) {
   const { deals } = useDeals();
   const isEdit = !!deal;
   const [form, setForm] = useState({
+    category: deal?.category ?? category ?? "",
     companyName: deal?.companyName ?? "",
     contactName: deal?.contactName ?? "",
     stage: deal?.stage ?? ("未アプローチ" as DealStage),

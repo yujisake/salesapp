@@ -17,7 +17,7 @@ type SortKey =
   | "updatedAt";
 type SortDir = "asc" | "desc";
 
-export default function DealTable() {
+export default function DealTable({ category }: { category: string }) {
   const { deals, dispatch } = useDeals();
   const [search, setSearch] = useState("");
   const [stageFilter, setStageFilter] = useState<DealStage | "すべて">(
@@ -31,7 +31,7 @@ export default function DealTable() {
   const [deletingDeal, setDeletingDeal] = useState<Deal | null>(null);
 
   const filtered = useMemo(() => {
-    let list = deals;
+    let list = deals.filter((d) => d.category === category);
     if (stageFilter !== "すべて") {
       list = list.filter((d) => d.stage === stageFilter);
     }
@@ -59,7 +59,7 @@ export default function DealTable() {
         : bStr.localeCompare(aStr, "ja");
     });
     return sorted;
-  }, [deals, search, stageFilter, assigneeFilter, sortKey, sortDir]);
+  }, [deals, category, search, stageFilter, assigneeFilter, sortKey, sortDir]);
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
@@ -244,12 +244,13 @@ export default function DealTable() {
       </div>
 
       <div className="text-right text-xs text-gray-400">
-        {filtered.length}件を表示（全{deals.length}件）
+        {filtered.length}件を表示
       </div>
 
       {/* Modals */}
       {isNewModalOpen && (
         <DealModal
+          category={category}
           onClose={() => setIsNewModalOpen(false)}
           onSave={(deal) => {
             dispatch({ type: "ADD", deal });

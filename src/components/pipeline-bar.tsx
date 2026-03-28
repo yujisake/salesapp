@@ -15,11 +15,12 @@ const BAR_BG: Record<DealStage, string> = {
   失注: "bg-red-400",
 };
 
-export default function PipelineBar() {
+export default function PipelineBar({ category }: { category: string }) {
   const { deals } = useDeals();
+  const catDeals = deals.filter((d) => d.category === category);
 
   const stageData = STAGES.map((stage) => {
-    const count = deals.filter((d) => d.stage === stage).length;
+    const count = catDeals.filter((d) => d.stage === stage).length;
     return { stage, count };
   });
 
