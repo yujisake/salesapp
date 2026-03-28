@@ -9,6 +9,15 @@ export type DealStage =
   | "納品"
   | "失注";
 
+export interface ActivityLog {
+  id: string;
+  date: string;
+  nextAction: string;
+  result: string;
+  hypothesis: string;
+  stage: DealStage;
+}
+
 export interface Deal {
   id: string;
   dealNumber: string;
@@ -22,6 +31,7 @@ export interface Deal {
   result: string;
   hypothesis: string;
   wonAmount: number;
+  activities: ActivityLog[];
   createdAt: string;
   updatedAt: string;
 }

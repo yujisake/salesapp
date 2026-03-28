@@ -46,9 +46,30 @@ export function createNewDeal(
 
 export function updateDealFields(deal: Deal, updates: Partial<Deal>): Deal {
   const today = new Date().toISOString().split("T")[0];
+  const hasChanged =
+    updates.nextAction !== deal.nextAction ||
+    updates.result !== deal.result ||
+    updates.hypothesis !== deal.hypothesis ||
+    updates.stage !== deal.stage;
+
+  const newActivities = hasChanged
+    ? [
+        ...deal.activities,
+        {
+          id: crypto.randomUUID(),
+          date: today,
+          nextAction: deal.nextAction,
+          result: deal.result,
+          hypothesis: deal.hypothesis,
+          stage: deal.stage,
+        },
+      ]
+    : deal.activities;
+
   return {
     ...deal,
     ...updates,
+    activities: newActivities,
     updatedAt: today,
   };
 }
