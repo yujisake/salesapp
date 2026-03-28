@@ -62,4 +62,13 @@ export const ASSIGNEES = [
 
 export type Assignee = (typeof ASSIGNEES)[number];
 
-export const DEFAULT_CATEGORIES = ["新規顧客", "海外", "OEM"] as const;
+export const DEFAULT_CATEGORIES = [
+  "新規開拓",
+  "百貨店・高級スーパー",
+  "OEM",
+  "海外",
+  "麹商品",
+  "料理酒",
+  "壌関連",
+  "群馬県イベント",
+] as const;

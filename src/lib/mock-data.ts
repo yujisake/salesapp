@@ -4,7 +4,7 @@ export const initialDeals: Deal[] = [
   {
     id: "1",
     dealNumber: "01",
-    category: "新規顧客",
+    category: "新規開拓",
     companyName: "東京テクノロジー株式会社",
     contactName: "田中 太郎",
     stage: "商談中",
@@ -20,7 +20,7 @@ export const initialDeals: Deal[] = [
   {
     id: "2",
     dealNumber: "02",
-    category: "新規顧客",
+    category: "新規開拓",
     companyName: "大阪メディア株式会社",
     contactName: "佐藤 次郎",
     stage: "提案",
@@ -36,7 +36,7 @@ export const initialDeals: Deal[] = [
   {
     id: "3",
     dealNumber: "03",
-    category: "新規顧客",
+    category: "新規開拓",
     companyName: "名古屋製造株式会社",
     contactName: "高橋 三郎",
     stage: "ヒアリング",
@@ -84,7 +84,7 @@ export const initialDeals: Deal[] = [
   {
     id: "6",
     dealNumber: "06",
-    category: "新規顧客",
+    category: "新規開拓",
     companyName: "横浜コンサルティング株式会社",
     contactName: "中村 六郎",
     stage: "未アプローチ",
