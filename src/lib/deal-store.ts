@@ -76,7 +76,7 @@ export function updateDealFields(deal: Deal, updates: Partial<Deal>): Deal {
 
 export const DealContext = createContext<{
   deals: Deal[];
-  dispatch: React.Dispatch<DealAction>;
+  dispatch: (action: DealAction) => void;
   categories: string[];
   addCategory: (name: string) => void;
   removeCategory: (name: string) => void;
